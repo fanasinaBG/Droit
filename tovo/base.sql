@@ -1,3 +1,12 @@
+-- Active: 1728498475504@@127.0.0.1@5432@tovo
+ --Table: user
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(55),
+    email VARCHAR(55),
+    mdp VARCHAR(255)
+);
+
 -- Table: Categories
 CREATE TABLE Categories (
     id INT PRIMARY KEY,
