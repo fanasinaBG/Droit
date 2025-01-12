@@ -7,6 +7,8 @@ CREATE TABLE users (
     mdp VARCHAR(255)
 );
 
+INSERT into users (name,email,mdp)VALUES('fanasina','fansina@gmail.com','bandyBg');
+select * from users;
 -- Table: Categories
 CREATE TABLE Categories (
     id INT PRIMARY KEY,
@@ -21,13 +23,16 @@ CREATE TABLE Pays (
 
 -- Table: Art
 CREATE TABLE Art (
-    id INT PRIMARY KEY,
-    idUser INT NOT NULL,
-    nom VARCHAR(255) NOT NULL,
+    id SERIAL PRIMARY KEY,
+    idUser INT ,
+    nom VARCHAR(255) ,
     dateDebut DATE,
     dateFin DATE,
      FOREIGN KEY (idUser) REFERENCES users(id)
 );
+insert into Art(idUser,nom,dateDebut,dateFin)values(1,'song','2025-01-11','2025-01-21');
+
+select * from Art;
 
 
 -- Table: Chanson
@@ -48,11 +53,15 @@ CREATE TABLE echeances (
 
 -- Table: Notification
 CREATE TABLE Notification (
-    id INT PRIMARY KEY,
-    idUtilisateur INT NOT NULL,
+    id SERIAL PRIMARY KEY,
+    idUser INT ,
     objet TEXT,
-    description TEXT
+    description TEXT,
+    FOREIGN KEY (idUser) REFERENCES users(id)
 );
+
+insert into Notification(idUser,objet,description) VALUES(1,'blabla','test');
+drop table Notification;
 
 -- Table: RaisonArtPays
 CREATE TABLE DemandePays (

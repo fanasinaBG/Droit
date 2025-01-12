@@ -1,12 +1,12 @@
 -loginUser
 -loginAdmin
--createUser
--createArt
--readAllArt
--readAllnotification
--createNotif
+-createUser ok
+-createArt ok
+-readAllArt ok
+-readAllnotification ok
+-createNotif ok
 -calendrie(bibliotheque)
--updateArt
+-updateArt ok
 -createLitige
 -readAllLitige
 -readDmd
